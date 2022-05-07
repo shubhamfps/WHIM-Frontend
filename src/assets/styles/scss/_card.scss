@@ -1,0 +1,50 @@
+.cardWrapper {
+  padding: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  .card {
+    margin-bottom: 2%;
+    width: 23.5%;
+    max-width: 23.5%;
+    &:not(:nth-child(4n)) {
+      margin-right: 2%;
+    }
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+      transition: 0.3s;
+    }
+  }
+  .rating {
+    margin: 1rem;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: left;
+    input {
+      display: none;
+    }
+    label {
+      position: relative;
+      width: 1em;
+      font-size: large;
+      color: #ffd600;
+      cursor: pointer;
+    }
+    label::before {
+      content: "\2605";
+      position: absolute;
+      opacity: 0;
+    }
+    label:hover:before,
+    label:hover ~ label:before {
+      opacity: 1 !important;
+    }
+    input:checked ~ label:before {
+      opacity: 1;
+    }
+    input:checked ~ label:before {
+      opacity: 0.4;
+    }
+  }
+}
